@@ -1,0 +1,3 @@
+import XLSX from 'xlsx'; import fs from 'fs'; import * as E from '../src/engine.js';
+for (const f of fs.readdirSync('../test-data').sort()){ const wb=XLSX.read(fs.readFileSync('../test-data/'+f),{type:'buffer',cellDates:true}); const rows=XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]],{defval:'',raw:true}); const r=E.rowsToDataset(rows,f);
+ if(r.error){console.log(f,'→ ERROR:',r.error);continue} E.setDataset(r.ds); const S=E.defaults(),o=E.run(S),ls=E.lenderStats(S,o),fc=E.forecast(S,o); console.log(f,'→',r.ds.note,'| score',ls.score,'floor',Math.round(fc.safe(.9)),'pay',Math.round(o.pay[63]), r.warnings.length?'warn: '+r.warnings[0]:'');}
