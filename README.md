@@ -2,7 +2,7 @@
 
 Ada Steady turns a freelancer's lumpy client payments into a steady weekly paycheck. It holds back tax and costs from every payment and pays the owner from a buffer.
 
-**Live demo:** open `docs/index.html` in Chrome. It is a single self-contained file and works offline. With GitHub Pages enabled on the `docs/` folder, it is also served at `https://<owner>.github.io/<repo>/`.
+**Live demo:** open `docs/index.html` in Chrome. It is a single self-contained file and works offline. With GitHub Pages enabled on the `docs/` folder, it is also served at https://srihitanuthalapati.github.io/ada-steady/.
 
 ## What the demo does
 
